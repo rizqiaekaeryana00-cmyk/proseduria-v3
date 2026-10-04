@@ -1904,6 +1904,7 @@
       .no-print { display: none !important; }
     }
   </style>
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
   <div id="game-container">
@@ -1938,6 +1939,7 @@
         </div>
       </div>
       <div class="nav-coin-group">
+        <button class="nav-jurnal-btn nav-home-btn" onclick="GameApp.kembaliKeHalamanUtama()" title="Kembali ke Gerbang Utama">🏠 HOME</button>
         <button class="nav-jurnal-btn nav-rank-btn" onclick="GameApp.bukaModal('modal-leaderboard')" title="Papan Peringkat Skor Terbanyak">🏆 PERINGKAT</button>
         <button class="nav-jurnal-btn nav-quest-btn" onclick="GameApp.bukaModal('modal-tantangan')" title="Tantangan & Target Belajar"><img src="aset/gambar/ui/icon_kompetensi_vibrant.png" class="icon-kompetensi-contrast" style="width:20px; height:20px; vertical-align:middle; margin-right:5px; object-fit:contain;" alt="Target Belajar"> TANTANGAN</button>
         <button class="nav-jurnal-btn" onclick="GameApp.bukaJurnal()" title="Buka Jurnal Pembelajaran Teks Prosedur">📖 JURNAL</button>
@@ -2085,7 +2087,11 @@
         <div class="briefing-title-pill">
           <span>📜</span> BRIEFING EKSPEDISI: ANOMALI LOGIKA NUSANTARA
         </div>
-        <button class="briefing-skip-btn" onclick="GameApp.bukaPeta()">LEWATI DIALOG (SKIP) ⏩</button>
+        <div class="briefing-top-actions">
+          <button class="scene-utility-btn" onclick="GameApp.kembaliKeHalamanUtama()" title="Kembali ke Gerbang Utama">🏠 HOME</button>
+          <button class="scene-utility-btn" onclick="GameApp.bukaPeta()" title="Buka Peta Ekspedisi">🗺️ PETA</button>
+          <button class="briefing-skip-btn" onclick="GameApp.bukaPeta()">LEWATI DIALOG (SKIP) ⏩</button>
+        </div>
       </div>
 
       <!-- CHARACTERS ON STAGE & MISSION PREVIEW -->
@@ -2169,6 +2175,11 @@
       <img class="scene-bg" src="aset/gambar/background/bg_map.jpeg">
       <div class="ambient-overlay"></div>
 
+      <nav class="map-scene-nav" aria-label="Navigasi Peta Ekspedisi">
+        <button class="scene-utility-btn" onclick="GameApp.kembaliKeHalamanUtama()" title="Kembali ke Gerbang Utama">🏠 HOME</button>
+        <button class="scene-utility-btn" onclick="GameApp.bukaModal('modal-panduan')" title="Buka Panduan Ekspedisi">📜 PANDUAN</button>
+      </nav>
+
       <!-- MAP VICTORY BANNER (MUNCUL OTOMATIS SAAT SELURUH 6 MISI PULIH HIJAU) -->
       <div id="map-all-completed-banner" class="map-all-completed-banner" style="display:none;">
         <div class="map-completed-icon">
@@ -2210,6 +2221,9 @@
 
       <!-- HEADER NAVIGASI MISI: KEMBALI, INDIKATOR POS, ULANGI, LANJUT -->
       <header class="mission-nav-bar" id="mission-nav-bar">
+        <button type="button" class="btn-mission-nav btn-nav-home" onclick="GameApp.kembaliKeHalamanUtama()" title="Kembali ke Gerbang Utama">
+          <span>🏠 HOME</span>
+        </button>
         <button type="button" class="btn-mission-nav btn-nav-back" onclick="GameApp.bukaPeta()" title="Kembali ke Peta Ekspedisi">
           <img src="aset/gambar/ui/btn_nav_prev.png" class="btn-nav-cog-img-sm" alt="Kembali">
           <span>⬅ KEMBALI</span>

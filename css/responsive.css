@@ -1,0 +1,462 @@
+/* Keep the 16:9 game canvas visible on narrow screens. */
+/* Themed navigation shared by the map, briefing, mission, and global HUD. */
+.nav-home-btn,
+.scene-utility-btn,
+.btn-nav-home {
+	background: linear-gradient(180deg, #0f766e 0%, #115e59 100%);
+	border-color: #5eead4;
+	color: #ecfeff;
+}
+
+.nav-home-btn:hover,
+.scene-utility-btn:hover,
+.btn-nav-home:hover {
+	background: linear-gradient(180deg, #14b8a6 0%, #0f766e 100%);
+	border-color: #ccfbf1;
+	box-shadow: 0 0 16px rgba(45, 212, 191, 0.65);
+}
+
+.scene-utility-btn {
+	border-width: 1.5px;
+	border-style: solid;
+	border-radius: 20px;
+	padding: 5px 12px;
+	font-size: 0.76rem;
+	font-weight: 900;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: all 0.2s ease;
+}
+
+.briefing-top-actions {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 7px;
+}
+
+.map-scene-nav {
+	position: absolute;
+	left: 20px;
+	bottom: 18px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	z-index: 60;
+}
+
+@media (min-width: 821px) {
+	#game-container {
+		aspect-ratio: 16 / 9;
+		width: min(100vw, 177.78vh);
+		height: auto;
+	}
+
+	.briefing-stage {
+		bottom: 192px;
+	}
+}
+
+/* The title composition uses fixed art dimensions; scale the complete group
+	 on common laptop heights so its edges remain inside the 16:9 canvas. */
+@media (min-width: 821px) and (max-height: 800px) {
+	.title-stage-wrapper {
+		transform: scale(0.88);
+		transform-origin: center center;
+	}
+}
+
+@media (min-width: 821px) and (max-height: 720px) {
+	.title-stage-wrapper {
+		transform: scale(0.8);
+	}
+}
+
+@media (max-width: 820px) {
+	.top-hud {
+		top: 5px;
+		left: 8px;
+		right: 8px;
+		height: 30px;
+		transform: scale(0.72);
+		transform-origin: top left;
+		width: 138%;
+	}
+
+	.title-floating-nav-bar {
+		top: 6px;
+		left: 8px;
+		right: 8px;
+		gap: 6px;
+	}
+
+	.title-nav-badge,
+	.title-nav-item {
+		padding: 3px 6px;
+		font-size: 0.55rem;
+		gap: 3px;
+	}
+
+	.title-nav-item .title-nav-cog {
+		width: 16px;
+		height: 16px;
+	}
+
+	.briefing-top-actions {
+		gap: 3px;
+	}
+
+	.scene-utility-btn {
+		padding: 3px 6px;
+		font-size: 0.55rem;
+	}
+
+	.map-scene-nav {
+		left: 8px;
+		bottom: 8px;
+		gap: 4px;
+	}
+
+	.btn-nav-home {
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+
+	.title-stage-wrapper {
+		justify-content: flex-start;
+		padding: 30px 8px 0;
+		overflow-y: auto;
+	}
+
+	.hero-isolated-logo {
+		width: min(82vw, 520px);
+		height: clamp(54px, 15vw, 110px);
+		margin: 0 0 2px;
+	}
+
+	.login-glass-card {
+		width: min(94%, 520px);
+		max-height: calc(100% - 60px);
+		overflow-y: auto;
+		padding: 7px 9px;
+		gap: 6px;
+		border-radius: 12px;
+	}
+
+	.login-mentors-banner {
+		flex-direction: row;
+		gap: 4px;
+		padding: 4px 6px;
+	}
+
+	.mentor-capsule {
+		gap: 4px;
+		padding: 3px 5px;
+	}
+
+	.mentor-avatar-disc {
+		width: 24px;
+		height: 24px;
+	}
+
+	.mentor-role-badge,
+	.mentor-name-title {
+		font-size: 0.48rem;
+	}
+
+	.compass-center-dial {
+		gap: 3px;
+	}
+
+	.compass-spinning-ring,
+	.compass-rotate-img {
+		width: 25px;
+		height: 25px;
+	}
+
+	.compass-needle-overlay {
+		width: 14px;
+		height: 14px;
+	}
+
+	.banner-main-title {
+		font-size: 0.48rem;
+		letter-spacing: 0.2px;
+	}
+
+	.banner-sub-title {
+		font-size: 0.4rem;
+	}
+
+	.login-card-grid {
+		gap: 5px;
+	}
+
+	.login-objective-panel,
+	.login-inputs-panel {
+		padding: 7px 9px;
+		gap: 5px;
+		border-radius: 10px;
+	}
+
+	.objective-text {
+		font-size: 0.62rem;
+		line-height: 1.35;
+	}
+
+	.objective-badge-title,
+	.inputs-badge-title {
+		font-size: 0.58rem;
+	}
+
+	.objective-grade-pill,
+	.inputs-ready-pill,
+	.inputs-subhint,
+	.field-label,
+	.explorer-rank-banner {
+		font-size: 0.54rem;
+	}
+
+	.input-box {
+		padding: 5px 7px;
+		font-size: 0.62rem;
+	}
+
+	.meta-tag {
+		font-size: 0.5rem;
+		padding: 2px 4px;
+	}
+
+	.hero-action-buttons {
+		margin-top: 0;
+	}
+
+	.btn-discrete-mulai {
+		width: 105px;
+		height: 76px;
+	}
+
+	.briefing-top-bar {
+		top: 6px;
+		left: 8px;
+		right: 8px;
+	}
+
+	.briefing-title-pill,
+	.briefing-skip-btn {
+		padding: 4px 7px;
+		font-size: 0.56rem;
+	}
+
+	.briefing-stage {
+		top: 40px;
+		bottom: 72px;
+		left: 8px;
+		right: 8px;
+	}
+
+	.briefing-avatar-img {
+		height: min(34%, 135px);
+		max-width: 38vw;
+	}
+
+	.briefing-char-name {
+		padding: 3px 6px;
+		font-size: 0.52rem;
+	}
+
+	.briefing-mission-preview {
+		top: 4px;
+		width: 44%;
+		padding: 5px 7px;
+		border-radius: 8px;
+	}
+
+	.briefing-mission-badge,
+	.briefing-mission-desc {
+		font-size: 0.48rem;
+	}
+
+	.briefing-mission-title {
+		font-size: 0.62rem;
+	}
+
+	.briefing-dialog-box {
+		bottom: 4px;
+		left: 8px;
+		right: 8px;
+		height: 64px;
+		padding: 6px 8px;
+		border-width: 2px;
+		border-radius: 12px;
+	}
+
+	.briefing-speaker-header {
+		font-size: 0.58rem;
+	}
+
+	.briefing-speech-text {
+		font-size: 0.56rem;
+		line-height: 1.25;
+		margin: 1px 0;
+	}
+
+	.briefing-nav-toolbar {
+		gap: 3px;
+		padding-top: 1px;
+	}
+
+	.btn-nav-cog-img {
+		height: 18px;
+	}
+
+	.btn-nav-bubble-action,
+	.btn-map-direct-glow,
+	.briefing-step-badge,
+	.briefing-click-hint {
+		font-size: 0.45rem;
+		padding: 2px 4px;
+	}
+
+	.mission-nav-bar {
+		top: 38px;
+		left: 8px;
+		right: 8px;
+		height: 28px;
+		padding: 2px 5px;
+		gap: 4px;
+		border-radius: 8px;
+	}
+
+	.btn-mission-nav,
+	.mission-nav-title-pill {
+		padding: 2px 5px;
+		font-size: 0.5rem;
+		gap: 2px;
+	}
+
+	.btn-nav-cog-img-sm {
+		height: 16px;
+	}
+
+	.workbench-container {
+		top: 70px;
+		bottom: 50px;
+		left: 8px;
+		right: 8px;
+		grid-template-columns: 1fr;
+		gap: 5px;
+		overflow-y: auto;
+	}
+
+	.glass-board {
+		min-height: 96px;
+		border-radius: 8px;
+	}
+
+	.board-ribbon {
+		padding: 4px 6px;
+		font-size: 0.56rem;
+	}
+
+	.board-body {
+		padding: 6px 8px 8px;
+		font-size: 0.58rem;
+		line-height: 1.3;
+	}
+
+	.dialog-wrapper {
+		bottom: 4px;
+		left: 8px;
+		right: 8px;
+		height: 44px;
+	}
+
+	.dialog-inner {
+		padding: 4px 7px 4px 58px;
+		border-radius: 8px;
+	}
+
+	.sprite-avatar {
+		left: 3px;
+		width: 58px;
+		height: 54px;
+	}
+
+	.dialog-content {
+		gap: 5px;
+	}
+
+	.dialog-speaker,
+	.dialog-speech {
+		font-size: 0.52rem;
+	}
+
+	.dialog-speech {
+		line-height: 1.2;
+		-webkit-line-clamp: 2;
+	}
+
+	.btn-action {
+		height: 24px;
+		padding: 0 6px;
+		font-size: 0.48rem;
+	}
+
+	.modal-box-large,
+	.modal-box-dark {
+		width: 92%;
+		max-width: 92%;
+		max-height: 90%;
+		padding: 10px 12px;
+		border-radius: 10px;
+	}
+
+	.modal-title,
+	.modal-box-dark .modal-title,
+	.modal-box-large .modal-title {
+		font-size: 0.8rem;
+		padding-bottom: 5px;
+		margin-bottom: 7px;
+	}
+
+	.modal-content,
+	.modal-box-dark .modal-content,
+	.modal-box-large .modal-content {
+		font-size: 0.65rem;
+		line-height: 1.35;
+	}
+
+	.modal-close-btn,
+	.modal-box-dark .modal-close-btn,
+	.modal-box-large .modal-close-btn {
+		height: 30px;
+		margin-top: 8px;
+		font-size: 0.62rem;
+	}
+
+	.certificate-container {
+		width: 94%;
+		max-width: 94%;
+		max-height: 94%;
+		padding: 8px;
+		border-width: 4px;
+	}
+
+	.cert-inner-border {
+		padding: 8px 10px;
+	}
+
+	.cert-title {
+		font-size: 1rem;
+	}
+
+	.cert-badges-grid {
+		gap: 3px;
+	}
+
+	.cert-badge-icon {
+		width: 22px;
+		height: 22px;
+	}
+}
