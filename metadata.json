@@ -1,0 +1,8 @@
+{
+  "name": "Remix proseduria-v1",
+  "description": "Imported from GitHub: rizqiaekaeryana00-cmyk/proseduria-v1",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

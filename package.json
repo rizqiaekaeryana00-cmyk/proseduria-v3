@@ -1,0 +1,17 @@
+{
+  "name": "proseduria",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PROSEDURIA: Ekspedisi Logika Nusantara",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "lint": "node -c server.js",
+    "build": "node -e \"console.log('Build successful')\"",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "sharp": "^0.35.4"
+  }
+}

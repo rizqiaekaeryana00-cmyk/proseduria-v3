@@ -1,0 +1,77 @@
+/* ==========================================================================
+       SCENE 1: TATA LETAK HARMONIS (CELAH GERBANG EMAS & TOMBOL UTUH)
+       ========================================================================== */
+    #scene-title {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+    }
+
+    /* 1. Logo Proseduria Megah Tepat di Puncak Celah Gapura */
+    .hero-isolated-logo {
+      position: absolute;
+      top: 25%; /* Disesuaikan agar posisinya pas di celah gapura */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 680px; /* Diperbesar agar menyerupai target */
+      height: 260px; /* Diperbesar agar proporsional */
+      background: url('aset/gambar/prop/prop logo proseduria.png') no-repeat center center;
+      background-size: contain; /* Memastikan seluruh gambar logo termuat tanpa terpotong */
+      z-index: 15;
+      filter: drop-shadow(0 0 35px rgba(251, 191, 36, 0.9)) drop-shadow(0 14px 28px rgba(0,0,0,0.95));
+      animation: logoHolyFloat 3.4s ease-in-out infinite alternate;
+    }
+    @keyframes logoHolyFloat {
+      0% { transform: translate(-50%, -50%) scale(0.98); }
+      100% { transform: translate(-50%, -53%) scale(1.02); }
+    }
+
+    /* ... Biarkan kode identitas (.hero-identity-card) tetap seperti aslinya ... */
+
+    /* 3. Baris Tombol Proporsional Tepat di Tangga Pelataran Bawah */
+    .hero-action-buttons {
+      position: absolute;
+      bottom: 12%; /* Dinaikkan dari 3.5% agar tombol tidak terpotong di batas bawah layar */
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      z-index: 25;
+    }
+
+    /* Tombol Informasi Roda Gigi - Diubah menjadi rasio 1:1 agar presisi bulat */
+    .btn-discrete-info {
+      width: 95px; 
+      height: 95px; /* Dibuat sama dengan lebar agar bentuk tombol "i" menjadi lingkaran sempurna */
+      border: none; cursor: pointer; background-color: transparent;
+      background: url('aset/gambar/prop/prop tombol informasi dan mulai.png') no-repeat;
+      background-size: 230% auto; /* Disesuaikan persentase spritenya */
+      background-position: 0% center; /* Digeser ke pinggir kiri spritenya */
+      filter: drop-shadow(0 6px 14px rgba(0,0,0,0.85));
+      transition: transform 0.15s, filter 0.2s;
+    }
+    .btn-discrete-info:hover {
+      transform: scale(1.08);
+      filter: brightness(1.25) drop-shadow(0 0 14px #fbbf24);
+    }
+    .btn-discrete-info:active { transform: scale(0.96); }
+
+    /* Tombol Mulai Roda Gigi Emas-Cyan - Diperbesar agar sesuai proporsi target */
+    .btn-discrete-mulai {
+      width: 220px; /* Diperbesar sedikit */
+      height: 85px; /* Diperbesar tinggi */
+      border: none; cursor: pointer; background-color: transparent;
+      background: url('aset/gambar/prop/prop tombol informasi dan mulai.png') no-repeat;
+      background-size: 140% auto;
+      background-position: 100% center; /* Difokuskan mengambil aset sebelah kanan pada sprite */
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,0.9));
+      transition: transform 0.15s, filter 0.2s;
+      animation: gearPulseGlow 2.5s infinite alternate ease-in-out;
+    }
+    .btn-discrete-mulai:hover {
+      transform: scale(1.06);
+      filter: brightness(1.25) drop-shadow(0 0 20px #38bdf8);
+    }
+    .btn-discrete-mulai:active { transform: scale(0.96); }
